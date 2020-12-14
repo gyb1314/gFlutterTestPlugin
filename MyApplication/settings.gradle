@@ -1,0 +1,12 @@
+include ':app'
+rootProject.name = "My Application"
+
+setBinding(new Binding([gradle:this]))
+evaluate(new File(
+        settingsDir.parentFile,
+        'gfluttertestmodule/.android/include_flutter.groovy'
+))
+
+
+include ':gfluttertestmodule'
+project(':gfluttertestmodule').projectDir = new File('../gfluttertestmodule')
